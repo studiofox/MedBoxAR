@@ -75,38 +75,12 @@
 	const assetLoader = new THREE.GLTFLoader();
 	
 
-// assetLoader.load("Model.glb", function (gltf) {
-//   const model = gltf.scene;
-//   markerRoot1.add(model);
-// //   model.position.set(-12, -50, -100);
-//   model.scale.set(0.7, 0.7, 0.7);
-
-//   model.traverse(function(node) {
-//     if(node.isMesh)
-//     {node.castShadow = true;}
-//   });
-// });
-
-let model;
-assetLoader.load("box.glb", function (gltf) {
+assetLoader.load("Model.glb", function (gltf) {
   const model = gltf.scene;
   markerRoot1.add(model);
 //   model.position.set(-12, -50, -100);
   model.scale.set(0.7, 0.7, 0.7);
 
-//   const tween1 = new TWEEN.Tween({x: 0, y:0, z:0})
-//   .to({x: 5, y: 0, z: 0}, 2000)
-//   .onUpdate((coords) => {
-// 	model.position.x = coords.x;
-// 	model.position.y = coords.y;
-// 	model.position.z = coords.z;
-//   })
-// //   .easiing(TWEEN.Easing.Exponential.InOut)
-//   .repeat(Infinity)
-//   tween1.start();
-
-
-  
   setTimeout(() => {
 	markerRoot1.remove(model);
   }, 12000);
@@ -117,11 +91,39 @@ assetLoader.load("box.glb", function (gltf) {
 	markerRoot1.remove(model);
   }, 31000);
 
+
   model.traverse(function(node) {
     if(node.isMesh)
     {node.castShadow = true;}
   });
 });
+
+// let model;
+// assetLoader.load("box.glb", function (gltf) {
+//   const model = gltf.scene;
+//   markerRoot1.add(model);
+// //   model.position.set(-12, -50, -100);
+//   model.scale.set(0.7, 0.7, 0.7);
+
+// //   const tween1 = new TWEEN.Tween({x: 0, y:0, z:0})
+// //   .to({x: 5, y: 0, z: 0}, 2000)
+// //   .onUpdate((coords) => {
+// // 	model.position.x = coords.x;
+// // 	model.position.y = coords.y;
+// // 	model.position.z = coords.z;
+// //   })
+// // //   .easiing(TWEEN.Easing.Exponential.InOut)
+// //   .repeat(Infinity)
+// //   tween1.start();
+
+
+  
+  
+//   model.traverse(function(node) {
+//     if(node.isMesh)
+//     {node.castShadow = true;}
+//   });
+// });
 
 const plane1geo = new THREE.PlaneGeometry(1.5, 1.5, 1.5);
 const plane1texture = new THREE.TextureLoader().load("Picture1.png")
