@@ -82,14 +82,17 @@ assetLoader.load("box.glb", function (gltf) {
   model.scale.set(0.7, 0.7, 0.7);
 
   setTimeout(() => {
-	markerRoot1.remove(model);
-  }, 12000);
-  setTimeout(() => {
-	markerRoot1.add(model);
-  }, 22000);
+	model.position.set(-1, 0, 0);
+  }, 6500);
   setTimeout(() => {
 	markerRoot1.remove(model);
-  }, 31000);
+  }, 16000);
+//   setTimeout(() => {
+// 	markerRoot1.add(model);
+//   }, 22000);
+//   setTimeout(() => {
+// 	markerRoot1.remove(model);
+//   }, 31000);
 
 
   model.traverse(function(node) {
@@ -133,10 +136,10 @@ const plane1Mat = new THREE.MeshBasicMaterial({
 });
 const plane1 = new THREE.Mesh(plane1geo, plane1Mat);
 // markerRoot1.add(plane1);
-plane1.position.set(2, 0, -0.5);
+plane1.position.set(1, 0, -0.5);
 // plane1.scale.set(0, 0, 0);
 
-const plane4geo = new THREE.PlaneGeometry(3, 1.5, 1.5);
+const plane4geo = new THREE.PlaneGeometry(2, 1, 1.5);
 const plane4texture = new THREE.TextureLoader().load("Picture5.png")
 const plane4Mat = new THREE.MeshBasicMaterial({
 	map : plane4texture,
@@ -202,52 +205,52 @@ setTimeout(() => {
   }, 8500);
   setTimeout(() => {
 	markerRoot1.remove(plane4);
-  }, 11500);
+  }, 15000);
   setTimeout(() => {
 	markerRoot1.remove(plane1);
-  }, 12000);
+  }, 16000);
   setTimeout(() => {
 	markerRoot1.add(plane2);
-  }, 13000);
-  setTimeout(() => {
-	markerRoot1.add(plane5);
-  }, 13500);
-  setTimeout(() => {
-	markerRoot1.remove(plane5);
-  }, 16500);
-  setTimeout(() => {
-	markerRoot1.remove(plane2);
   }, 17000);
   setTimeout(() => {
-	markerRoot1.add(plane3);
+	markerRoot1.add(plane5);
   }, 18000);
   setTimeout(() => {
-	markerRoot1.remove(plane3);
-  }, 22000);
-  setTimeout(() => {
-	markerRoot1.add(plane1);
-  }, 27000);
-  setTimeout(() => {
-	markerRoot1.add(plane4);
-  }, 28500);
-  setTimeout(() => {
-	markerRoot1.remove(plane4);
-  }, 30500);
-  setTimeout(() => {
-	markerRoot1.remove(plane1);
-  }, 31000);
-  setTimeout(() => {
-	markerRoot1.add(plane2);
-  }, 32000);
+	markerRoot1.remove(plane5);
+  }, 43500);
   setTimeout(() => {
 	markerRoot1.remove(plane2);
-  }, 36000);
+  }, 45000);
   setTimeout(() => {
 	markerRoot1.add(plane3);
-  }, 37000);
+  }, 46000);
   setTimeout(() => {
 	markerRoot1.remove(plane3);
-  }, 41000);
+  }, 56000);
+//   setTimeout(() => {
+// 	markerRoot1.add(plane1);
+//   }, 27000);
+//   setTimeout(() => {
+// 	markerRoot1.add(plane4);
+//   }, 28500);
+//   setTimeout(() => {
+// 	markerRoot1.remove(plane4);
+//   }, 30500);
+//   setTimeout(() => {
+// 	markerRoot1.remove(plane1);
+//   }, 31000);
+//   setTimeout(() => {
+// 	markerRoot1.add(plane2);
+//   }, 32000);
+//   setTimeout(() => {
+// 	markerRoot1.remove(plane2);
+//   }, 36000);
+//   setTimeout(() => {
+// 	markerRoot1.add(plane3);
+//   }, 37000);
+//   setTimeout(() => {
+// 	markerRoot1.remove(plane3);
+//   }, 41000);
 
 
 
@@ -276,8 +279,8 @@ animate();
 
 	setTimeout(function(){
 		document.getElementById("myaudio1").play();
-		}, 8000)
+		}, 9500)
 
 		setTimeout(function(){
 			document.getElementById("myaudio2").play();
-			}, 16000)
+			}, 18500)
