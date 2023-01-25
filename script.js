@@ -93,12 +93,16 @@ loader.load("box.glb", function (gltf) {
   setTimeout(() => {
 	markerRoot1.remove(model);
   }, 16000);
-//   setTimeout(() => {
-// 	markerRoot1.add(model);
-//   }, 22000);
-//   setTimeout(() => {
-// 	markerRoot1.remove(model);
-//   }, 31000);
+  setTimeout(() => {
+	markerRoot1.add(model);
+	model.position.set(0, 0, 0.5);
+  }, 49000);
+  setTimeout(() => {
+	model.position.set(-1.2, 0, 0.5);
+  }, 49650);
+  setTimeout(() => {
+	markerRoot1.remove(model);
+  }, 65000);
 
 
 
@@ -192,15 +196,37 @@ const clipAction3 = mixer3.clipAction( clip3 );
 
 
 
-const plane2geo = new THREE.PlaneGeometry(2.5, 1.5, 1.5);
-const plane2texture = new THREE.TextureLoader().load("Picture2.png")
+const plane2geo = new THREE.PlaneGeometry(9.5, 7.5, 7.5);
+const plane2texture = new THREE.TextureLoader().load("Graph.png")
 const plane2Mat = new THREE.MeshBasicMaterial({
 	map : plane2texture,
 	side : THREE.DoubleSide
 });
 const plane2 = new THREE.Mesh(plane2geo, plane2Mat);
 // markerRoot1.add(plane2);
-plane2.position.set(0, 0, -0.5);
+plane2.position.set(0, 10, -2.5);
+
+// POSITION
+const positionKF4 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
+const positionKF7 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
+
+
+
+const clip4 = new THREE.AnimationClip( 'Action', 50, [ positionKF4 ] );
+const clip7 = new THREE.AnimationClip( 'Action', 50, [ positionKF7 ] );
+
+
+ // setup the THREE.AnimationMixer
+const mixer4 = new THREE.AnimationMixer( plane2);
+const mixer7 = new THREE.AnimationMixer( plane2);
+
+			
+// create a ClipAction and set it to play
+const clipAction4 = mixer4.clipAction( clip4 );
+const clipAction7 = mixer7.clipAction( clip7 );
+
+
+
 
 const plane5geo = new THREE.PlaneGeometry(3, 1.5, 1.5);
 const plane5texture = new THREE.TextureLoader().load("Picture4.png")
@@ -210,20 +236,38 @@ const plane5Mat = new THREE.MeshBasicMaterial({
 });
 const plane5 = new THREE.Mesh(plane5geo, plane5Mat);
 // markerRoot1.add(plane5);
-plane5.position.set(0, 0, 1.2);
+plane5.position.set(0, 0, -10);
 plane5.rotation.set(-Math.PI/2,0,0)
 
+// POSITION
+const positionKF5 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 10, 0, 0, 1, 0, 0, 1 ] );
+const positionKF6 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 1, 0, 0, 10, 0, 0, 10 ] );
 
 
-const plane3geo = new THREE.PlaneGeometry(2.5, 1.5, 1.5);
-const plane3texture = new THREE.TextureLoader().load("Picture3.png")
-const plane3Mat = new THREE.MeshBasicMaterial({
-	map : plane3texture,
-	side : THREE.DoubleSide
-});
-const plane3 = new THREE.Mesh(plane3geo, plane3Mat);
-// markerRoot1.add(plane3);
-plane3.position.set(0, 0, -0.5);
+const clip5 = new THREE.AnimationClip( 'Action', 50, [ positionKF5 ] );
+const clip6 = new THREE.AnimationClip( 'Action', 50, [ positionKF6 ] );
+
+ // setup the THREE.AnimationMixer
+const mixer5 = new THREE.AnimationMixer( plane5);
+const mixer6 = new THREE.AnimationMixer( plane5);
+			
+// create a ClipAction and set it to play
+const clipAction5 = mixer5.clipAction( clip5 );
+const clipAction6 = mixer6.clipAction( clip6 );
+
+
+
+
+
+// const plane3geo = new THREE.PlaneGeometry(2.5, 1.5, 1.5);
+// const plane3texture = new THREE.TextureLoader().load("Picture3.png")
+// const plane3Mat = new THREE.MeshBasicMaterial({
+// 	map : plane3texture,
+// 	side : THREE.DoubleSide
+// });
+// const plane3 = new THREE.Mesh(plane3geo, plane3Mat);
+// // markerRoot1.add(plane3);
+// plane3.position.set(0, 0, -0.5);
 
 
 
@@ -243,6 +287,10 @@ function render()
 	mixer1.update( delta );
 	mixer2.update( delta );
 	mixer3.update( delta );
+	mixer4.update( delta );
+	mixer5.update( delta );
+	mixer6.update( delta );
+	mixer7.update( delta );
 
 	}
 
@@ -265,55 +313,87 @@ function render()
   }, 15000);
   setTimeout(() => {
 	markerRoot1.remove(plane4);
-  }, 16000);
+  }, 16300);
   setTimeout(() => {
 	clipAction1.play();
-  }, 17000);
+  }, 16500);
   setTimeout(() => {
 	markerRoot1.remove(plane1);
+  }, 17500);
+  setTimeout(() => {
+	markerRoot1.add(plane2);
   }, 18000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane2);
-//   }, 17000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane5);
-//   }, 18000);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane5);
-//   }, 43500);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane2);
-//   }, 45000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane3);
-//   }, 46000);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane3);
-//   }, 56000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane1);
-//   }, 27000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane4);
-//   }, 28500);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane4);
-//   }, 30500);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane1);
-//   }, 31000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane2);
-//   }, 32000);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane2);
-//   }, 36000);
-//   setTimeout(() => {
-// 	markerRoot1.add(plane3);
-//   }, 37000);
-//   setTimeout(() => {
-// 	markerRoot1.remove(plane3);
-//   }, 41000);
+  setTimeout(() => {
+	clipAction4.play();
+  }, 18000);
+  setTimeout(() => {
+	markerRoot1.add(plane5);
+  }, 19000);
+  setTimeout(() => {
+	clipAction5.play();
+  }, 19000);
+  setTimeout(() => {
+	clipAction6.play();
+  }, 46000);
+  setTimeout(() => {
+	markerRoot1.remove(plane5);
+  }, 47000);
+  setTimeout(() => {
+	clipAction7.play();
+  }, 47500);
+  setTimeout(() => {
+	markerRoot1.remove(plane2);
+  }, 48000);
+
+
+
+  setTimeout(() => {
+	markerRoot1.add(plane1);
+  }, 55000);
+setTimeout(() => {
+	markerRoot1.add(plane1);
+	clipAction.play();
+  }, 55500);
+  setTimeout(() => {
+	markerRoot1.add(plane4);
+	clipAction2.play();
+  }, 57500);
+  setTimeout(() => {
+	clipAction3.play();
+  }, 64000);
+  setTimeout(() => {
+	markerRoot1.remove(plane4);
+  }, 65300);
+  setTimeout(() => {
+	clipAction1.play();
+  }, 65500);
+  setTimeout(() => {
+	markerRoot1.remove(plane1);
+  }, 66500);
+  setTimeout(() => {
+	markerRoot1.add(plane2);
+  }, 67000);
+  setTimeout(() => {
+	clipAction4.play();
+  }, 67000);
+  setTimeout(() => {
+	markerRoot1.add(plane5);
+  }, 68000);
+  setTimeout(() => {
+	clipAction5.play();
+  }, 68000);
+  setTimeout(() => {
+	clipAction6.play();
+  }, 95000);
+  setTimeout(() => {
+	markerRoot1.remove(plane5);
+  }, 96000);
+  setTimeout(() => {
+	clipAction7.play();
+  }, 96500);
+  setTimeout(() => {
+	markerRoot1.remove(plane2);
+  }, 97000);
 
 
 
@@ -337,4 +417,16 @@ animate();
 
 		setTimeout(function(){
 			document.getElementById("myaudio2").play();
-			}, 18500)
+			}, 21500)
+
+
+			setTimeout(function(){
+				document.getElementById("myaudio1").play();
+				}, 59500)
+		
+				setTimeout(function(){
+					document.getElementById("myaudio2").play();
+					}, 70500)
+
+			var vid = document.getElementById("myVideo");
+            vid.volume = 0.6;
