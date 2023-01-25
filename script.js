@@ -136,6 +136,9 @@ plane1.position.set(10, 0, -0.5);
 const positionKF = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 10, 0, -0.5, 1.2, 0, -0.5, 1.2, 0, -0.5 ] );
 
 const positionKF1 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [  1.2, 0, -0.5, 10, 0, -0.5, 10, 0, -0.5] );
+const positionKF8 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 10, 0, -0.5, 1.2, 0, -0.5, 1.2, 0, -0.5 ] );
+
+const positionKF9 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [  1.2, 0, -0.5, 10, 0, -0.5, 10, 0, -0.5] );
 
 // // SCALE
 // const scaleKF = new THREE.VectorKeyframeTrack( '.scale', [ 0, 1, 2 ], [ 0, 0, 0,1, 1, 1, 1, 1, 1, ] );
@@ -148,16 +151,22 @@ const positionKF1 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [  
 // If a negative time value is passed, the duration will be calculated from the times of the passed tracks array
 const clip = new THREE.AnimationClip( 'Action', 50, [ positionKF ] );
 const clip1 = new THREE.AnimationClip( 'Action', 50, [ positionKF1 ] );
+const clip8 = new THREE.AnimationClip( 'Action', 50, [ positionKF8 ] );
+const clip9 = new THREE.AnimationClip( 'Action', 50, [ positionKF9 ] );
 
  
 // setup the THREE.AnimationMixer
 const mixer = new THREE.AnimationMixer( plane1);
 const mixer1 = new THREE.AnimationMixer( plane1);
+const mixer8 = new THREE.AnimationMixer( plane1);
+const mixer9 = new THREE.AnimationMixer( plane1);
 			
 
 // create a ClipAction and set it to play
 const clipAction = mixer.clipAction( clip );
 const clipAction1 = mixer1.clipAction( clip1 );
+const clipAction8 = mixer8.clipAction( clip8 );
+const clipAction9 = mixer9.clipAction( clip9 );
 
 
 
@@ -181,16 +190,26 @@ const positionKF2 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 1
 
 const positionKF3 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 1.2, 0, 1, 1.2, 0, 10, 1.2, 0, 10 ] );
 
+const positionKF10 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 1.2, 0, 10, 1.2, 0, 1, 1.2, 0, 1 ] );
+
+const positionKF11 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 1.2, 0, 1, 1.2, 0, 10, 1.2, 0, 10 ] );
+
 const clip2 = new THREE.AnimationClip( 'Action', 50, [ positionKF2 ] );
 const clip3 = new THREE.AnimationClip( 'Action', 50, [ positionKF3 ] );
+const clip10 = new THREE.AnimationClip( 'Action', 50, [ positionKF10 ] );
+const clip11 = new THREE.AnimationClip( 'Action', 50, [ positionKF11 ] );
 
  // setup the THREE.AnimationMixer
 const mixer2 = new THREE.AnimationMixer( plane4);
 const mixer3 = new THREE.AnimationMixer( plane4);
+const mixer10 = new THREE.AnimationMixer( plane4);
+const mixer11 = new THREE.AnimationMixer( plane4);
 			
 // create a ClipAction and set it to play
 const clipAction2 = mixer2.clipAction( clip2 );
 const clipAction3 = mixer3.clipAction( clip3 );
+const clipAction10 = mixer10.clipAction( clip10 );
+const clipAction11 = mixer11.clipAction( clip11 );
 
 
 
@@ -209,21 +228,29 @@ plane2.position.set(0, 10, -2.5);
 // POSITION
 const positionKF4 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
 const positionKF7 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
+const positionKF12 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
+const positionKF13 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5 ] );
 
 
 
 const clip4 = new THREE.AnimationClip( 'Action', 50, [ positionKF4 ] );
 const clip7 = new THREE.AnimationClip( 'Action', 50, [ positionKF7 ] );
+const clip12 = new THREE.AnimationClip( 'Action', 50, [ positionKF12 ] );
+const clip13 = new THREE.AnimationClip( 'Action', 50, [ positionKF13 ] );
 
 
  // setup the THREE.AnimationMixer
 const mixer4 = new THREE.AnimationMixer( plane2);
 const mixer7 = new THREE.AnimationMixer( plane2);
+const mixer12 = new THREE.AnimationMixer( plane2);
+const mixer13 = new THREE.AnimationMixer( plane2);
 
 			
 // create a ClipAction and set it to play
 const clipAction4 = mixer4.clipAction( clip4 );
 const clipAction7 = mixer7.clipAction( clip7 );
+const clipAction12 = mixer12.clipAction( clip12 );
+const clipAction13 = mixer13.clipAction( clip13 );
 
 
 
@@ -242,18 +269,26 @@ plane5.rotation.set(-Math.PI/2,0,0)
 // POSITION
 const positionKF5 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 10, 0, 0, 1, 0, 0, 1 ] );
 const positionKF6 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 1, 0, 0, 10, 0, 0, 10 ] );
+const positionKF14 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 10, 0, 0, 1, 0, 0, 1 ] );
+const positionKF15 = new THREE.VectorKeyframeTrack( '.position', [ 0, 1, 2 ], [ 0, 0, 1, 0, 0, 10, 0, 0, 10 ] );
 
 
 const clip5 = new THREE.AnimationClip( 'Action', 50, [ positionKF5 ] );
 const clip6 = new THREE.AnimationClip( 'Action', 50, [ positionKF6 ] );
+const clip14 = new THREE.AnimationClip( 'Action', 50, [ positionKF14 ] );
+const clip15 = new THREE.AnimationClip( 'Action', 50, [ positionKF15 ] );
 
  // setup the THREE.AnimationMixer
 const mixer5 = new THREE.AnimationMixer( plane5);
 const mixer6 = new THREE.AnimationMixer( plane5);
+const mixer14 = new THREE.AnimationMixer( plane5);
+const mixer15 = new THREE.AnimationMixer( plane5);
 			
 // create a ClipAction and set it to play
 const clipAction5 = mixer5.clipAction( clip5 );
 const clipAction6 = mixer6.clipAction( clip6 );
+const clipAction14 = mixer14.clipAction( clip14 );
+const clipAction15 = mixer15.clipAction( clip15 );
 
 
 
@@ -280,7 +315,7 @@ function update()
 
 function render()
 {
-    if ( mixer ) {
+    
 
 	const delta = clock.getDelta();
 	mixer.update( delta );
@@ -291,8 +326,16 @@ function render()
 	mixer5.update( delta );
 	mixer6.update( delta );
 	mixer7.update( delta );
+	mixer8.update( delta );
+	mixer9.update( delta );
+	mixer10.update( delta );
+	mixer11.update( delta );
+	mixer12.update( delta );
+	mixer13.update( delta );
+	mixer14.update( delta );
+	mixer15.update( delta );
 
-	}
+	
 
 	renderer.render( scene, camera );
 }
@@ -351,21 +394,20 @@ function render()
 	markerRoot1.add(plane1);
   }, 55000);
 setTimeout(() => {
-	markerRoot1.add(plane1);
-	clipAction.play();
+	clipAction8.play();
   }, 55500);
   setTimeout(() => {
 	markerRoot1.add(plane4);
-	clipAction2.play();
+	clipAction10.play();
   }, 57500);
   setTimeout(() => {
-	clipAction3.play();
+	clipAction11.play();
   }, 64000);
   setTimeout(() => {
 	markerRoot1.remove(plane4);
   }, 65300);
   setTimeout(() => {
-	clipAction1.play();
+	clipAction9.play();
   }, 65500);
   setTimeout(() => {
 	markerRoot1.remove(plane1);
@@ -374,22 +416,22 @@ setTimeout(() => {
 	markerRoot1.add(plane2);
   }, 67000);
   setTimeout(() => {
-	clipAction4.play();
+	clipAction12.play();
   }, 67000);
   setTimeout(() => {
 	markerRoot1.add(plane5);
   }, 68000);
   setTimeout(() => {
-	clipAction5.play();
+	clipAction13.play();
   }, 68000);
   setTimeout(() => {
-	clipAction6.play();
+	clipAction14.play();
   }, 95000);
   setTimeout(() => {
 	markerRoot1.remove(plane5);
   }, 96000);
   setTimeout(() => {
-	clipAction7.play();
+	clipAction15.play();
   }, 96500);
   setTimeout(() => {
 	markerRoot1.remove(plane2);
