@@ -232,7 +232,7 @@ loader.load("graph.glb", function (gltf) {
   model0 = gltf.scene;
   markerRoot1.add(model0);
   model0.position.set(3, 0, 0.5);
-  model0.scale.set(0.1, 0.1, 0.1);
+  model0.scale.set(0.01, 0.01, 0.01);
 
   setTimeout(() => {
     model0.position.set(3, 0, 0.5);
@@ -423,12 +423,12 @@ setTimeout(() => {
 setTimeout(() => {
   markerRoot1.remove(plane1);
 }, 17500);
-setTimeout(() => {
-  markerRoot1.add(plane2);
-}, 18000);
-setTimeout(() => {
-  clipAction4.play();
-}, 18000);
+// setTimeout(() => {
+//   markerRoot1.add(plane2);
+// }, 18000);
+// setTimeout(() => {
+//   clipAction4.play();
+// }, 18000);
 // setTimeout(() => {
 //   markerRoot1.add(plane5);
 // }, 19000);
@@ -441,12 +441,12 @@ setTimeout(() => {
 // setTimeout(() => {
 //   markerRoot1.remove(plane5);
 // }, 47000);
-setTimeout(() => {
-  clipAction7.play();
-}, 47500);
-setTimeout(() => {
-  markerRoot1.remove(plane2);
-}, 48000);
+// setTimeout(() => {
+//   clipAction7.play();
+// }, 47500);
+// setTimeout(() => {
+//   markerRoot1.remove(plane2);
+// }, 48000);
 
 setTimeout(() => {
   markerRoot1.add(plane1);
@@ -470,12 +470,12 @@ setTimeout(() => {
 setTimeout(() => {
   markerRoot1.remove(plane1);
 }, 66500);
-setTimeout(() => {
-  markerRoot1.add(plane2);
-}, 67000);
-setTimeout(() => {
-  clipAction12.play();
-}, 67000);
+// setTimeout(() => {
+//   markerRoot1.add(plane2);
+// }, 67000);
+// setTimeout(() => {
+//   clipAction12.play();
+// }, 67000);
 // setTimeout(() => {
 //   markerRoot1.add(plane5);
 // }, 68000);
@@ -488,12 +488,12 @@ setTimeout(() => {
 // setTimeout(() => {
 //   markerRoot1.remove(plane5);
 // }, 96000);
-setTimeout(() => {
-  clipAction15.play();
-}, 96500);
-setTimeout(() => {
-  markerRoot1.remove(plane2);
-}, 97000);
+// setTimeout(() => {
+//   clipAction15.play();
+// }, 96500);
+// setTimeout(() => {
+//   markerRoot1.remove(plane2);
+// }, 97000);
 
 function animate() {
   requestAnimationFrame(animate);
