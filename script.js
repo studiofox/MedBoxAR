@@ -225,39 +225,41 @@ const clipAction9 = mixer9.clipAction(clip9);
 // const clipAction10 = mixer10.clipAction(clip10);
 // const clipAction11 = mixer11.clipAction(clip11);
 
+// const graphUrl = new URL("graph.glb");
+// const assetLoader1 = new GLTFLoader();
 
 
-let model0;
+let mixer0;
+const loader1 = new THREE.GLTFLoader();
+
+let model1;
 loader.load("graph.glb", function (gltf) {
-  model0 = gltf.scene;
-  markerRoot1.add(model0);
-  model0.position.set(3, 0, 2);
-  model0.scale.set(0.01, 0.01, 0.01);
+  model1 = gltf.scene;
+//   markerRoot1.add(model1);
+  model1.position.set(0, 0, -0.5);
+  model1.scale.set(0.02, 0.02, 0.02);
+
+  mixer0 = new THREE.AnimationMixer(model1);
+  const clips = gltf.animations;
+
+  const idleClip = THREE.AnimationClip.findByName(clips, "Animation01");
+  const idleAction = mixer0.clipAction(idleClip);
+  idleAction.play();
 
   setTimeout(() => {
-    model0.position.set(3, 0, 2);
-  }, 6500);
+    markerRoot1.add(model1);
+  }, 18000);
   setTimeout(() => {
-    markerRoot1.remove(model0);
-  }, 16000);
+    markerRoot1.remove(model1);
+  }, 48000);
   setTimeout(() => {
-    markerRoot1.add(model0);
-    model0.position.set(0, 0, 0.5);
-  }, 49000);
+    markerRoot1.add(model1);
+  }, 67000);
   setTimeout(() => {
-    model0.position.set(3, 0, 0.5);
-  }, 49650);
-  setTimeout(() => {
-    markerRoot1.remove(model0);
-  }, 65000);
+    markerRoot1.remove(model);
+  }, 97000);
 
-  model0.traverse(function (node) {
-    if (node.isMesh) {
-      node.castShadow = true;
-    }
-  });
 });
-
 
 
 
@@ -406,7 +408,7 @@ function render() {
 setTimeout(() => {
   markerRoot1.add(plane1);
   clipAction.play();
-}, 6500);
+}, 6000);
 // setTimeout(() => {
 //   markerRoot1.add(plane4);
 //   clipAction2.play();
@@ -497,9 +499,16 @@ setTimeout(() => {
 
 function animate() {
   requestAnimationFrame(animate);
-  deltaTime = clock.getDelta();
-  totalTime += deltaTime;
-  update();
+//   deltaTime = clock.getDelta();
+//   totalTime += deltaTime;
+//   if (mixer0) mixer0.update(clock.getDelta());
+  
+
+if (mixer0) mixer0.update(clock.getDelta());
+
+  // now we are making renderer to add scene and camera to
+//   renderer.render(scene, camera);
+update();
   render();
 }
 
