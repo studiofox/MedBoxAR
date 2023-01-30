@@ -232,7 +232,7 @@ loader.load("graph.glb", function (gltf) {
   model0 = gltf.scene;
   markerRoot1.add(model0);
   model0.position.set(3, 0, 0.5);
-  model0.scale.set(0.8, 0.8, 0.8);
+  model0.scale.set(0.1, 0.1, 0.1);
 
   setTimeout(() => {
     model0.position.set(3, 0, 0.5);
