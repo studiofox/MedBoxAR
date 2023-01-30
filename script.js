@@ -231,11 +231,11 @@ let model0;
 loader.load("graph.glb", function (gltf) {
   model0 = gltf.scene;
   markerRoot1.add(model0);
-  model0.position.set(3, 0, 0.5);
+  model0.position.set(3, 0, 2);
   model0.scale.set(0.01, 0.01, 0.01);
 
   setTimeout(() => {
-    model0.position.set(3, 0, 0.5);
+    model0.position.set(3, 0, 2);
   }, 6500);
   setTimeout(() => {
     markerRoot1.remove(model0);
