@@ -261,54 +261,54 @@ loader.load("graph.glb", function (gltf) {
 
 
 
-const plane2geo = new THREE.PlaneGeometry(9.5, 7.5, 7.5);
-const plane2texture = new THREE.TextureLoader().load("Graph.png");
-const plane2Mat = new THREE.MeshBasicMaterial({
-  map: plane2texture,
-  side: THREE.DoubleSide,
-});
-const plane2 = new THREE.Mesh(plane2geo, plane2Mat);
-// markerRoot1.add(plane2);
-plane2.position.set(0, 10, -2.5);
+// const plane2geo = new THREE.PlaneGeometry(9.5, 7.5, 7.5);
+// const plane2texture = new THREE.TextureLoader().load("Graph.png");
+// const plane2Mat = new THREE.MeshBasicMaterial({
+//   map: plane2texture,
+//   side: THREE.DoubleSide,
+// });
+// const plane2 = new THREE.Mesh(plane2geo, plane2Mat);
+// // markerRoot1.add(plane2);
+// plane2.position.set(0, 10, -2.5);
 
-// POSITION
-const positionKF4 = new THREE.VectorKeyframeTrack(
-  ".position",
-  [0, 1, 2],
-  [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
-);
-const positionKF7 = new THREE.VectorKeyframeTrack(
-  ".position",
-  [0, 1, 2],
-  [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
-);
-const positionKF12 = new THREE.VectorKeyframeTrack(
-  ".position",
-  [0, 1, 2],
-  [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
-);
-const positionKF13 = new THREE.VectorKeyframeTrack(
-  ".position",
-  [0, 1, 2],
-  [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
-);
+// // POSITION
+// const positionKF4 = new THREE.VectorKeyframeTrack(
+//   ".position",
+//   [0, 1, 2],
+//   [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
+// );
+// const positionKF7 = new THREE.VectorKeyframeTrack(
+//   ".position",
+//   [0, 1, 2],
+//   [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
+// );
+// const positionKF12 = new THREE.VectorKeyframeTrack(
+//   ".position",
+//   [0, 1, 2],
+//   [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
+// );
+// const positionKF13 = new THREE.VectorKeyframeTrack(
+//   ".position",
+//   [0, 1, 2],
+//   [0, 10, -2.5, 0, 0, -2.5, 0, 0, -2.5]
+// );
 
-const clip4 = new THREE.AnimationClip("Action", 50, [positionKF4]);
-const clip7 = new THREE.AnimationClip("Action", 50, [positionKF7]);
-const clip12 = new THREE.AnimationClip("Action", 50, [positionKF12]);
-const clip13 = new THREE.AnimationClip("Action", 50, [positionKF13]);
+// const clip4 = new THREE.AnimationClip("Action", 50, [positionKF4]);
+// const clip7 = new THREE.AnimationClip("Action", 50, [positionKF7]);
+// const clip12 = new THREE.AnimationClip("Action", 50, [positionKF12]);
+// const clip13 = new THREE.AnimationClip("Action", 50, [positionKF13]);
 
-// setup the THREE.AnimationMixer
-const mixer4 = new THREE.AnimationMixer(plane2);
-const mixer7 = new THREE.AnimationMixer(plane2);
-const mixer12 = new THREE.AnimationMixer(plane2);
-const mixer13 = new THREE.AnimationMixer(plane2);
+// // setup the THREE.AnimationMixer
+// const mixer4 = new THREE.AnimationMixer(plane2);
+// const mixer7 = new THREE.AnimationMixer(plane2);
+// const mixer12 = new THREE.AnimationMixer(plane2);
+// const mixer13 = new THREE.AnimationMixer(plane2);
 
-// create a ClipAction and set it to play
-const clipAction4 = mixer4.clipAction(clip4);
-const clipAction7 = mixer7.clipAction(clip7);
-const clipAction12 = mixer12.clipAction(clip12);
-const clipAction13 = mixer13.clipAction(clip13);
+// // create a ClipAction and set it to play
+// const clipAction4 = mixer4.clipAction(clip4);
+// const clipAction7 = mixer7.clipAction(clip7);
+// const clipAction12 = mixer12.clipAction(clip12);
+// const clipAction13 = mixer13.clipAction(clip13);
 
 
 
@@ -387,7 +387,7 @@ function render() {
 //   mixer4.update(delta);
 //   mixer5.update(delta);
 //   mixer6.update(delta);
-  mixer7.update(delta);
+//   mixer7.update(delta);
   mixer8.update(delta);
   mixer9.update(delta);
 //   mixer10.update(delta);
