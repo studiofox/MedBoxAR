@@ -233,7 +233,7 @@ let mixer0;
 const loader1 = new THREE.GLTFLoader();
 
 let model1;
-loader.load("graph.glb", function (gltf) {
+loader.load("graph0.glb", function (gltf) {
   model1 = gltf.scene;
 //   markerRoot1.add(model1);
   model1.position.set(0, 0, -0.5);
@@ -242,9 +242,10 @@ loader.load("graph.glb", function (gltf) {
   mixer0 = new THREE.AnimationMixer(model1);
   const clips = gltf.animations;
 
-  const idleClip = THREE.AnimationClip.findByName(clips, "Animation01");
+  const idleClip = THREE.AnimationClip.findByName(clips, "Animation");
   const idleAction = mixer0.clipAction(idleClip);
   idleAction.play();
+  // idleAction.loop = THREE.LoopOnce;
 
   setTimeout(() => {
     markerRoot1.add(model1);
